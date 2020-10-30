@@ -1,5 +1,5 @@
 <?php
-echo "Lucass";
-echo "Lucas";
-echo "Luccass";
-echo "Tissjmen";
+echo "Luascass";
+echo "Lucssaas";
+echo "Luccasass";
+echo "Tissasjmen";
