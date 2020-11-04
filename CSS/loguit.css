@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background: url(../img/Bepis.png) no-repeat center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form {
+    width: calc(100% - 20px);
+    max-width: 500px;
+    background-color: #fff;
+    padding: 50px 40px;
+}
+
+.login-form h1 {
+    text-align: center;
+    margin: 48px 0;
+    font-size: 36px;
+    color: #111;
+    font-size: 48px;
+}
+
+.loguit {
+    display: block;
+    width: 420px;
+    height: 100px;
+    margin: 40px auto;
+    background-color: #fff;
+    color: #111;
+    font-size: 24px;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+.loguit:hover {
+    opacity: .85;
+    background-color: #2151a1;
+    color: #fff;
+}
+
+.login-form a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 8px;
+    transition: .2s linear;
+}
