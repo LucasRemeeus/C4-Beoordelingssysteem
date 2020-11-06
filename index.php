@@ -19,33 +19,16 @@ if (isset($_POST['inlog']))
     $Gebruikersnaam = $_POST['Gebruikersnaam'];
     $Wachtwoord = $_POST['Wachtwoord'];
 
-    $opdracht = "SELECT * FROM login
-                 WHERE gebruikersnaam = '$Gebruikersnaam'
-                 AND wachtwoord = '$Wachtwoord'";
 
-
-    $resultaat = mysqli_query($mysqli, $opdracht);
-
-    if (mysqli_num_rows($resultaat) > 0)
-    {
-
-        $user = mysqli_fetch_array($resultaat);
-
-        $_SESSION['gebruikersnaam'] = $user['gebruikersnaam'];
-        $_SESSION['student_ID'] = $user['student_ID'];
-        $_SESSION['docent_ID'] = $user['docent_ID'];
-
-    if ($_SESSION['student_ID'] > 0 )
-    {
-
-      header("location:../home.php?id=".$_SESSION['student_ID']."");
-    }
-    elseif ($_SESSION['docent_ID'] > 0)
-    {
-
-      header("location:../mentor.php?id=".$_SESSION['docent_ID']."");
-    }
-
+        $statement = $mysqli -> prepare("SELECT * FROM Docenten WHERE Username = ? AND Password = ?");
+        $statement ->bind_param('ss', $Gebruikersnaam, $Wachtwoord);
+        $statement -> execute();
+        $result = $statement->get_result();
+        if($result->num_rows == 1){
+            session_start();
+            $_SESSION['username'] = $Gebruikersnaam;
+            $_SESSION['loggedin'] = true;
+            header('location:home.php');
 
     }
     else
