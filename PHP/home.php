@@ -2,7 +2,7 @@
 session_start();
 require_once 'php/config.php';
 	
-if ($_SESSION['student_ID'] == 0)
+if ($_SESSION['loggedin'] === true)
 {
 	header('location:/php/inlog.php');
 	die();
