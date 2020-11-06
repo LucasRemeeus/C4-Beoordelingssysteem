@@ -14,7 +14,7 @@
 <?php
 if (isset($_POST['inlog']))
 {
-    require 'config.php';
+    require 'php/config.php';
 
     $Gebruikersnaam = $_POST['Gebruikersnaam'];
     $Wachtwoord = $_POST['Wachtwoord'];
