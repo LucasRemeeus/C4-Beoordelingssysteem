@@ -66,7 +66,8 @@ else
             <input type="checkbox">
             <div class="fas fa-check"></div>
             Blijf ingelogd
-        </div>
+        </div><br>
+
         <div class="captcha_wrapper">
             <div class="g-recaptcha" data-sitekey="6LfDoeIZAAAAAPaG2gLzY4ZOo0n1GIL1kfxSKnG4"></div>
         </div>
