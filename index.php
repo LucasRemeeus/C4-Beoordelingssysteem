@@ -20,8 +20,27 @@ if (isset($_POST['inlog']))
     $Gebruikersnaam = $_POST['Gebruikersnaam'];
     $Wachtwoord = $_POST['Wachtwoord'];
 
+    $response = $_POST["g-recaptcha-response"];
 
-        $statement = $mysqli -> prepare("SELECT * FROM Docenten WHERE Username = ? AND Password = ?");
+	$url = 'https://www.google.com/recaptcha/api/siteverify';
+	$data = array(
+		'secret' => '6LfDoeIZAAAAAKfP184jV6984G3auGIW9hCkTTQT',
+		'response' => $_POST["g-recaptcha-response"]
+	);
+	$options = array(
+		'http' => array (
+			'method' => 'POST',
+			'content' => http_build_query($data)
+		)
+	);
+	$context  = stream_context_create($options);
+	$verify = file_get_contents($url, false, $context);
+	$captcha_success=json_decode($verify);
+
+	if ($captcha_success->success==false) {
+		
+	} else if ($captcha_success->success==true) {
+		$statement = $mysqli -> prepare("SELECT * FROM Docenten WHERE Username = ? AND Password = ?");
         $statement ->bind_param('ss', $Gebruikersnaam, $Wachtwoord);
         $statement -> execute();
         $result = $statement->get_result();
@@ -29,7 +48,7 @@ if (isset($_POST['inlog']))
             session_start();
             $_SESSION['username'] = $Gebruikersnaam;
             $_SESSION['loggedin'] = true;
-            header('location:home.php');
+            header('location:PHP/home.php');
     }
     else
     {
