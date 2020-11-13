@@ -7,8 +7,8 @@
     <title>Log in!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/login_form.css">
-    <script src="../js/login_form.js" defer></script>
+    <link rel="stylesheet" href="css/login_form.css">
+    <script src="js/login_form.js" defer></script>
 </head>
 <body>
 <?php
