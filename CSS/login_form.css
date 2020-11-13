@@ -109,7 +109,7 @@ body{
 }
   
 .checkbox input:checked{
-    background-color: #2151a1;
+    background-color: #6ED3FF;
 }
   
 .checkbox input:checked + .fa-check{
@@ -121,7 +121,7 @@ body{
     width: 420px;
     height: 100px;
     margin: 40px auto;
-    background-color: #2151a1;
+    background-color: #6ED3FF;
     color: #fff;
     font-size: 40px;
     border: none;
