@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/login_form.css">
     <script src="js/login_form.js" defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 <?php
@@ -29,7 +30,6 @@ if (isset($_POST['inlog']))
             $_SESSION['username'] = $Gebruikersnaam;
             $_SESSION['loggedin'] = true;
             header('location:home.php');
-
     }
     else
     {
@@ -69,6 +69,10 @@ else
         </div>
 
         <button class="btn fas fa-arrow-right" type="submit" name="inlog" ></button>
+
+        <div class="captcha_wrapper">
+            <div class="g-recaptcha" data-sitekey="6LfDoeIZAAAAAPaG2gLzY4ZOo0n1GIL1kfxSKnG4"></div>
+        </div>
     </form>
     <?php
 }
