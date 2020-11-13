@@ -13,7 +13,7 @@ session_destroy();
     <script src="../JS/login_form.js" defer></script> 
 </head>
 <body>
-    <form method="POST" action="inlog.php" class="login-form">
+    <form method="POST" action="../index.php" class="login-form">
         <h1>U bent uitgelogd!</h1>
 
         <button class="loguit">Opnieuw inloggen</button>
