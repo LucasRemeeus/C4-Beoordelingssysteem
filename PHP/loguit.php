@@ -9,8 +9,8 @@ session_destroy();
     <title>Uitgelogd</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/loguit.css">
-    <script src="../js/login_form.js" defer></script> 
+    <link rel="stylesheet" href="../CSS/loguit.css">
+    <script src="../JS/login_form.js" defer></script> 
 </head>
 <body>
     <form method="POST" action="inlog.php" class="login-form">

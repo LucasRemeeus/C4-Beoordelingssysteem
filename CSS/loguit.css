@@ -7,7 +7,7 @@
 }
 
 body{
-    background: url(../img/Bepis.png) no-repeat center;
+    background: url(../IMG/background.jpg) no-repeat center;
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -46,7 +46,7 @@ body{
 
 .loguit:hover {
     opacity: .85;
-    background-color: #2151a1;
+    background-color: #6ED3FF;
     color: #fff;
 }
 
