@@ -67,12 +67,12 @@ else
             <div class="fas fa-check"></div>
             Blijf ingelogd
         </div>
-
-        <button class="btn fas fa-arrow-right" type="submit" name="inlog" ></button>
-
         <div class="captcha_wrapper">
             <div class="g-recaptcha" data-sitekey="6LfDoeIZAAAAAPaG2gLzY4ZOo0n1GIL1kfxSKnG4"></div>
         </div>
+
+        <button class="btn fas fa-arrow-right" type="submit" name="inlog" ></button>
+
     </form>
     <?php
 }
