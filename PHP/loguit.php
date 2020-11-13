@@ -17,9 +17,6 @@ session_destroy();
         <h1>U bent uitgelogd!</h1>
 
         <button class="loguit">Opnieuw inloggen</button>
-    
-        <a href="../index.php">Terug naar Homepage</a><br>
-
     </form>
 
 </body>
