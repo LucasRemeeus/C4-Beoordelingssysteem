@@ -37,7 +37,7 @@
             </button>
         </div>
         <div class="mx-auto order-0">
-            <a class="navbar-brand mx-auto text-center text-dark knop" href="dashboard.php">Dashboard</a>
+            <a class="navbar-brand mx-auto text-center text-dark knop" href="dashboard.php">Terug</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>
