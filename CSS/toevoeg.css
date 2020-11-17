@@ -29,6 +29,8 @@
         border-radius: 10px;
     }
     
+    select {}
+    
     .toevoeg-form {
         width: calc(100% - 20px);
         max-width: 500px;
@@ -67,6 +69,18 @@
         font-weight: 700;
         position: absolute;
         line-height: 70px;
+        top: 0;
+        left: 20px;
+        color: #9d9d9d;
+        user-select: none;
+        pointer-events: none;
+    }
+    
+    .klas {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 700;
+        position: relative;
         top: 0;
         left: 20px;
         color: #9d9d9d;

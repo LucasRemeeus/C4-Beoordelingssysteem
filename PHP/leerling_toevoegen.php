@@ -69,7 +69,8 @@ require 'config.php';?>
         </div>
 
         <div class="textb">
-            <select>
+            <label class="klas">Klas:</label> 
+            <select class="form-control">
 
                 <?php
                 $statement = $mysqli -> prepare("SELECT DISTINCT Klas FROM `docentkopeling`");
@@ -81,8 +82,10 @@ require 'config.php';?>
                     <option value="<?php echo $row['Klas'];?>"><?php echo $row['Klas'];?></option>
                 <?php }?>
             </select>
-            <div class="placeholder">Klas</div>
+            
         </div>
+
+        
 
 
         <br>
