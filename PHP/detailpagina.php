@@ -31,7 +31,7 @@ if ($_SESSION['loggedin'] === true)
 
 <body>
 
-<!-- Nav bar -->
+    <!-- Nav bar -->
     <nav class="navbar navbar-expand-md shadow-lg bg-white">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
@@ -39,6 +39,12 @@ if ($_SESSION['loggedin'] === true)
                     <a class="nav-link text-dark" href="#">Hallo, Meneer Remeeus</a>
                 </li>
             </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto text-center text-dark knop" href="dashboard.php">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
         <div class="mx-auto order-0">
             <a class="navbar-brand mx-auto text-center text-dark knop" href="dashboard.php">Dashboard</a>
@@ -58,29 +64,83 @@ if ($_SESSION['loggedin'] === true)
     <!-- Container -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2 mt-3">
+            <div class="col-2 mt-5 ml-5">
                 <div class="card corner">
                     <div class="card-vertical">
                         <div class="img-square-wrapper">
-                            <img class="float-right profile mt-5 mr-5" src="../IMG/001-cat.svg" alt="Card image cap">
+                            <img class="float-right profile mt-5 mr-5" src="../IMG/014-koala.svg" alt="Card image cap">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">Wraith. S</h4>
+                            <h5 class="card-title">Voornaam: <p>Joeri</span></h5>
+                            <h5 class="card-title">Achternaam: Dekker</h5><br><br>
+                            <h5 class="card-title">Klas: 8a1</h5>
+                            <h5 class="card-title">Mentor: Bever Lucas Remeeus</h5>
+                            <hr>
                             <div class="totaal">
-                                <div class="good">
-                                    <img class="duim" src="../IMG/duim-omhoog.png" alt="Duim omhoog">
-                                </div>
-                                <div class="float-right text-center rounded-circle punten">
-                                    <p class="punt">0</p>
-                                </div>
-                                <div class="bad mt-5">
-                                    <img class="duim" src="../IMG/duim-omlaag.png" alt="Duim omhoog">
-                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="col-11 mt-5 ml-5">
+                <div class="card corner">
+                    <div class="card-vertical">
+                        <div class="card-body">
+                            <table class="text-center detailtable">
+                                <tr>
+                                    <th>Datum:</th>
+                                    <th>Punten:</th>
+                                    <th>Opmerkingen:</th>
+                                </tr>
+                                <tr>
+                                    <td>11-11-2020</td>
+                                    <td>+1</td>
+                                    <td>Te pussy in Phasmophobia</td>
+                                </tr>
+                                <tr>
+                                    <td>11-11-2020</td>
+                                    <td>+1</td>
+                                    <td>Te pussy in Phasmophobia</td>
+                                </tr>
+                                <tr>
+                                    <td>11-11-2020</td>
+                                    <td>+1</td>
+                                    <td>Te pussy in Phasmophobia</td>
+                                </tr>
+                                <tr>
+                                    <td>11-11-2020</td>
+                                    <td>+1</td>
+                                    <td>Te pussy in Phasmophobia</td>
+                                </tr>
+                                <tr>
+                                    <td>11-11-2020</td>
+                                    <td>+1</td>
+                                    <td>Te pussy in Phasmophobia</td>
+                                </tr>
+                                <tr>
+                                    <td>11-11-2020</td>
+                                    <td>+1</td>
+                                    <td>Te pussy in Phasmophobia</td>
+                                </tr>
+                                <tr>
+                                    <td>11-11-2020</td>
+                                    <td>+1</td>
+                                    <td>Te pussy in Phasmophobia</td>
+                                </tr>
+                                <tr>
+                                    <td>11-11-2020</td>
+                                    <td>+1</td>
+                                    <td>Te pussy in Phasmophobia</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 </body>
