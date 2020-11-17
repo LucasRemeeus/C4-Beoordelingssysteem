@@ -21,28 +21,35 @@
 </head>
 <body>
 
+<!-- Nav bar -->
 <nav class="navbar navbar-expand-md shadow-lg bg-white">
-    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link text-dark" href="#">Hallo, Meneer Remeeus</a>
-            </li>
-        </ul>
-    </div>
-    <div class="mx-auto order-0">
-        <a class="navbar-brand mx-auto text-dark" href="dashboard.php">Dashboard</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="loguit.php">Uitloggen</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-dark" href="#">Hallo, Meneer Remeeus</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand text-center text-dark mr-5 knop" href="home.php">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto text-center text-dark knop" href="dashboard.php">Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-center text-dark knop" href="loguit.php">Uitloggen</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
 
 
@@ -68,7 +75,8 @@
 
         <br>
 
-        <button class="btn fas fa-arrow-right" type="submit" name="submit" value="Verzenden" >Versturen</button>
+        
+        <button class="loguit" type="submit" name="submit" value="Verzenden">Verzenden</button>
 
   </form>
 </div>  

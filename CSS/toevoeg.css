@@ -74,24 +74,6 @@
         top: -16px;
     }
     
-    .btn {
-        display: block;
-        width: 420px;
-        height: 100px;
-        margin: 40px auto;
-        background-color: #6ED3FF;
-        color: #fff;
-        font-size: 40px;
-        border: none;
-        border-radius: 15px;
-        cursor: pointer;
-        transition: .3s linear;
-    }
-    
-    .btn:hover {
-        opacity: .85;
-    }
-    
     .login-form a {
         display: block;
         text-align: center;
@@ -108,8 +90,22 @@
         color: #111;
     }
     
-    .btn:disabled {
-        background-color: transparent;
-        color: #ddd;
-        border: 2px solid;
+    .loguit {
+        display: block;
+        width: 420px;
+        height: 100px;
+        margin: 40px auto;
+        background-color: #fff;
+        color: #111;
+        font-size: 24px;
+        border: 2px solid #ddd;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: .3s linear;
+    }
+    
+    .loguit:hover {
+        opacity: .85;
+        background-color: #6ED3FF;
+        color: #fff;
     }
