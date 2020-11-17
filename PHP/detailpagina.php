@@ -4,7 +4,7 @@ require_once 'config.php';
 	
 if ($_SESSION['loggedin'] === true)
 {
-	header('location:inlog.php');
+    header('location:../index.php');
 	die();
 }
 ?> -->
