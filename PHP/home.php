@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'config.php';
+require 'config.php';
 	
 if ($_SESSION['loggedin'] ===! true)
 {
@@ -58,6 +58,13 @@ if ($_SESSION['loggedin'] ===! true)
     <!-- Container -->
     <div class="container-fluid">
         <div class="row">
+<!--      TODO: While loop      -->
+<?php
+
+$statement = $mysqli -> prepare("SELECT * FROM `leerling`");
+$statement -> execute();
+$result = $statement->get_result();
+while ($row = $result->fetch_assoc()){ ?>
             <div class="col-2 mt-3">
                 <div class="card corner">
                     <div class="card-vertical">
@@ -65,7 +72,7 @@ if ($_SESSION['loggedin'] ===! true)
                             <img class="float-right profile mt-5 mr-5" src="../IMG/001-cat.svg" alt="Card image cap">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">Wraith. S</h4>
+                            <h4 class="card-title"> <?php echo $row['Voornaam'] ." ". $row['Achternaam'] ?> </h4>
                             <div class="totaal">
                                 <div class="good">
                                     <img class="duim" src="../IMG/duim-omhoog.png" alt="Duim omhoog">
@@ -81,9 +88,12 @@ if ($_SESSION['loggedin'] ===! true)
                     </div>
                 </div>
             </div>
-
-            
+            <?php
+}
+            ?>
+<!--            -->
         </div>
     </div>
 </body>
+
 </html>
