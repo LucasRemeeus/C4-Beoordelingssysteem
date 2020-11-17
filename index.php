@@ -21,7 +21,7 @@ if (isset($_POST['inlog']))
     $Wachtwoord = $_POST['Wachtwoord'];
 
 
-        $statement = $mysqli -> prepare("SELECT * FROM Docenten WHERE Username = ? AND Password = ?");
+        $statement = $mysqli -> prepare("SELECT * FROM docenten WHERE Username = ? AND Password = ?");
         $statement ->bind_param('ss', $Gebruikersnaam, $Wachtwoord);
         $statement -> execute();
         $result = $statement->get_result();

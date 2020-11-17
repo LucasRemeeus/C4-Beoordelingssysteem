@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start();
+require 'config.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +38,7 @@
             </button>
         </div>
         <div class="mx-auto order-0">
-            <a class="navbar-brand mx-auto text-center text-dark knop" href="dashboard.php">Dashboard</a>
+            <a class="navbar-brand mx-auto text-center text-dark knop" href="dashboard.php">Terug</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -68,7 +69,18 @@
         </div>
 
         <div class="textb">
-            <input name="klas" id="klas" required>  
+            <select>
+
+                <?php
+                $statement = $mysqli -> prepare("SELECT DISTINCT Klas FROM `docentkopeling`");
+                $statement -> execute();
+                $result = $statement->get_result();
+                while ($row = $result->fetch_assoc()){
+
+                ?>
+                    <option value="<?php echo $row['Klas'];?>"><?php echo $row['Klas'];?></option>
+                <?php }?>
+            </select>
             <div class="placeholder">Klas</div>
         </div>
 
