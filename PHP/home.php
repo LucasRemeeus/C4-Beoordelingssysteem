@@ -41,7 +41,7 @@ if ($_SESSION['loggedin'] === true)
             </ul>
         </div>
         <div class="mx-auto order-0">
-            <a class="navbar-brand mx-auto text-dark" href="dashboard.php">Dashboard</a>
+            <a class="navbar-brand mx-auto text-center text-dark knop" href="dashboard.php">Dashboard</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -49,19 +49,20 @@ if ($_SESSION['loggedin'] === true)
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="loguit.php">Uitloggen</a>
+                    <a class="nav-link text-center text-dark knop" href="loguit.php">Uitloggen</a>
                 </li>
             </ul>
         </div>
     </nav>
 
+    <!-- Container -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-2 mt-3">
                 <div class="card corner">
                     <div class="card-vertical">
                         <div class="img-square-wrapper">
-                            <img class="float-right profile" src="../IMG/001-cat.svg" alt="Card image cap">
+                            <img class="float-right profile mt-5 mr-5" src="../IMG/001-cat.svg" alt="Card image cap">
                         </div>
                         <div class="card-body">
                             <h4 class="card-title">Wraith. S</h4>
@@ -70,48 +71,12 @@ if ($_SESSION['loggedin'] === true)
                                     <img class="duim" src="../IMG/duim-omhoog.png" alt="Duim omhoog">
                                 </div>
                                 <div class="float-right text-center rounded-circle punten">
-                                    <p>0</p>
+                                    <p class="punt">0</p>
                                 </div>
                                 <div class="bad mt-5">
                                     <img class="duim" src="../IMG/duim-omlaag.png" alt="Duim omhoog">
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-2 mt-3">
-                <div class="card corner">
-                    <div class="card-vertical">
-                        <div class="img-square-wrapper">
-                            <img class="float-right profile" src="../IMG/002-horse.svg" alt="Card image cap">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Wraith. S</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-2 mt-3">
-                <div class="card corner">
-                    <div class="card-vertical">
-                        <div class="img-square-wrapper">
-                            <img class="float-right profile" src="../IMG/003-gorilla.svg" alt="Card image cap">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Wraith. S</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-2 mt-3">
-                <div class="card corner">
-                    <div class="card-vertical">
-                        <div class="img-square-wrapper">
-                            <img class="float-right profile" src="../IMG/011-giraffe.svg" alt="Card image cap">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Wraith. S</h4>
                         </div>
                     </div>
                 </div>
