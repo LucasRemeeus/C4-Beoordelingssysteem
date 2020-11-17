@@ -49,7 +49,7 @@ if ($_SESSION['loggedin'] ===! true)
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-center text-dark knop" href="loguit.php">Uitloggen</a>
+                    <a class="nav-link text-center text-dark knop" href="loguit.php"><b>Uitloggen</b></a>
                 </li>
             </ul>
         </div>
