@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start();
+require 'config.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +69,18 @@
         </div>
 
         <div class="textb">
-            <input name="klas" id="klas" required>  
+            <select>
+
+                <?php
+                $statement = $mysqli -> prepare("SELECT DISTINCT Klas FROM `docentkopeling`");
+                $statement -> execute();
+                $result = $statement->get_result();
+                while ($row = $result->fetch_assoc()){
+
+                ?>
+                    <option value="<?php echo $row['Klas'];?>"><?php echo $row['Klas'];?></option>
+                <?php }?>
+            </select>
             <div class="placeholder">Klas</div>
         </div>
 

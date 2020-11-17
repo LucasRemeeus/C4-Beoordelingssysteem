@@ -15,6 +15,7 @@ require_once 'config.php';
 </head>
 <body>
 <a href="leerling_toevoegen.php">Voeg lid toe</a>
+<a href="home.php">Terug</a>
 <table>
     <tr>
         <th>Voornaam</th>
