@@ -29,7 +29,7 @@ if (isset($_POST['inlog']))
             session_start();
             $_SESSION['username'] = $Gebruikersnaam;
             $_SESSION['loggedin'] = true;
-            header('location:home.php');
+            header('location:PHP/home.php');
     }
     else
     {
