@@ -21,6 +21,7 @@ time, mark, audio, video {
 
 body {
     background-color: #6ED3FF;
+    min-width: 1080px;
 }
 
 /* Nav bar */
@@ -70,3 +71,16 @@ nav {
     width: 43px;
     height: 43px;
 }
+
+table, td, th {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    padding: 15px;
+}
+
