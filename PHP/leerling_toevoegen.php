@@ -46,7 +46,7 @@ require 'config.php';?>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-center text-dark knop" href="loguit.php">Uitloggen</a>
+                    <a class="nav-link text-center text-dark knop" href="loguit.php"><b>Uitloggen</b></a>
                 </li>
             </ul>
         </div>
@@ -79,7 +79,7 @@ require 'config.php';?>
                 while ($row = $result->fetch_assoc()){
 
                 ?>
-                    <option id="klas" name="klas" value="<?php echo $row['Klas'];?>"><?php echo $row['Klas'];?></option>
+                    <option value="<?php echo $row['Klas'];?>"><?php echo $row['Klas'];?></option>
                 <?php }?>
             </select>
             
