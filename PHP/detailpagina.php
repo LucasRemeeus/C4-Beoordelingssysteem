@@ -1,13 +1,13 @@
-<?php
+<!-- <?php
 session_start();
 require_once 'config.php';
 	
-if ($_SESSION['loggedin'] ===! true)
+if ($_SESSION['loggedin'] === true)
 {
-	header('location:../index.php');
+	header('location:inlog.php');
 	die();
 }
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,9 +81,8 @@ if ($_SESSION['loggedin'] ===! true)
                     </div>
                 </div>
             </div>
-
-            
         </div>
     </div>
 </body>
+
 </html>
