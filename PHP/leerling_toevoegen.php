@@ -79,7 +79,7 @@ require 'config.php';?>
                 while ($row = $result->fetch_assoc()){
 
                 ?>
-                    <option value="<?php echo $row['Klas'];?>"><?php echo $row['Klas'];?></option>
+                    <option id="klas" name="klas" value="<?php echo $row['Klas'];?>"><?php echo $row['Klas'];?></option>
                 <?php }?>
             </select>
             
