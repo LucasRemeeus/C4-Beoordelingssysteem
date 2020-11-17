@@ -21,6 +21,7 @@
     
     nav {
         position: absolute;
+        font-weight: bold;
     }
     
     form {
