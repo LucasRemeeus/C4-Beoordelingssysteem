@@ -1,7 +1,8 @@
 <?php
 session_start();
-if ($_SESSION['loggedin'] === true) {
-    header('location:/php/inlog.php');
+if ($_SESSION['loggedin'] ===! true)
+{
+    header('location:../index.php');
     die();
 }
 require_once 'config.php';
@@ -13,7 +14,7 @@ require_once 'config.php';
     <title>Title</title>
 </head>
 <body>
-<a href="lid_toevoegen.php">Voeg lid toe</a>
+<a href="leerling_toevoegen.php">Voeg lid toe</a>
 <table>
     <tr>
         <th>Voornaam</th>
@@ -30,8 +31,8 @@ require_once 'config.php';
         echo "<td>" . $row['Voornaam']. "</td>";
         echo "<td>" . $row['Achternaam']. "</td>";
         echo "<td>" . $row['Klas']. "</td>";
-        echo "<td><a href='lid_wijzig.php?id=".$row['id']."'>Bewerk</a></td>";
-        echo "<td><a href='lid_verwijder.php?id=".$row['id']."'>Delete</a></td>";
+        echo "<td><a href='Leerling_wijzig.php?id=".$row['ID_Leerling']."'>Bewerk</a></td>";
+        echo "<td><a href='Leerling_verwijder.php?id=".$row['ID_Leerling']."'>Delete</a></td>";
         echo "</tr>";
     }
     ?>

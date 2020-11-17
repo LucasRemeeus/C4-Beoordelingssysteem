@@ -1,7 +1,8 @@
 <?php
 session_start();
-if ($_SESSION['loggedin'] === true) {
-    header('location:/php/inlog.php');
+if ($_SESSION['loggedin'] ===! true)
+{
+    header('location:../index.php');
     die();
 }
 require 'config.php';
@@ -23,7 +24,7 @@ while ($row = $result->fetch_assoc()) {
     <title>Title</title>
 </head>
 <body>
-<form action="lid_bewerk_verwerk.php" method="post">
+<form action="Leerling_wijzig_verwerk.php" method="post">
     <input type="number" name="id" id="id" value="<?php echo $row['ID_Leerling']?>" required hidden readonly>
     <p>
         <label for="first_name" >Voornaam:</label>

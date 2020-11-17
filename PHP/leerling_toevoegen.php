@@ -10,10 +10,11 @@
 <form action="leerling_toevoegen_verwerk.php" method="post">
     <label for="voornaam">Voornaam</label>
     <input name="voornaam" id="voornaam" required>
-    <label for="achternaam">Voornaam</label>
+    <label for="achternaam">achternaam</label>
     <input name="achternaam" id="achternaam" required>
-    <label for="klas">Voornaam</label>
+    <label for="klas">klas</label>
     <input name="klas" id="klas" required>
+    <input type="submit" name="submit" value="submit">
 </form>
 
 </body>

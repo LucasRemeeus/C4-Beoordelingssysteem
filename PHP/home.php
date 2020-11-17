@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once 'php/config.php';
+require_once 'config.php';
 	
-if ($_SESSION['loggedin'] === true)
+if ($_SESSION['loggedin'] ===! true)
 {
-	header('location:/php/inlog.php');
+	header('location:../index.php');
 	die();
 }
 ?>
