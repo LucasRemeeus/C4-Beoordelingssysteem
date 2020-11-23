@@ -7,6 +7,12 @@ if ($_SESSION['loggedin'] ===! true)
     header('location:../index.php');
 	die();
 }
+$mentorInfo = $mysqli->prepare("SELECT Voornaam, Achternaam, ID_Docent FROM docenten WHERE Username=?");
+$mentorInfo->bind_param("s", $_SESSION['username']);
+$mentorInfo->execute();
+$mentorInfo->bind_result($mVoornaam, $mAchternaam, $mID);
+$mentorInfo->fetch();
+$mentorInfo->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">

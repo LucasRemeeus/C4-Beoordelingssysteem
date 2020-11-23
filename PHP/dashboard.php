@@ -6,6 +6,12 @@ if ($_SESSION['loggedin'] ===! true)
     die();
 }
 require_once 'config.php';
+$mentorInfo = $mysqli->prepare("SELECT Voornaam, Achternaam, ID_Docent FROM docenten WHERE Username=?");
+$mentorInfo->bind_param("s", $_SESSION['username']);
+$mentorInfo->execute();
+$mentorInfo->bind_result($mVoornaam, $mAchternaam, $mID);
+$mentorInfo->fetch();
+$mentorInfo->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
