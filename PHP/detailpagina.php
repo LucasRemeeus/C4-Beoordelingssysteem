@@ -36,7 +36,7 @@ if ($_SESSION['loggedin'] ===! true)
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link text-dark" href="#">Hallo, Meneer Remeeus</a>
+                    <a class="nav-link text-dark" href="#">Hallo, <?php echo $mVoornaam." ".$mAchternaam ?></a>
                 </li>
             </ul>
         </div>
