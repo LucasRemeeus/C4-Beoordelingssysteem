@@ -45,7 +45,7 @@ require_once 'config.php';
             </button>
         </div>
         <div class="mx-auto order-0">
-            <a class="navbar-brand text-center text-dark knop" href="dashboard.php">Toevoegen</a>
+            <a class="navbar-brand text-center text-dark knop" href="leerling_toevoegen.php">Toevoegen</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -67,9 +67,6 @@ require_once 'config.php';
                     <div class="card-vertical">
                         <div class="card-body">
                             <table class="text-center detailtable">
-
-
-                                <a class="navbar-brand mx-auto text-center" href="leerling_toevoegen.php">Voeg lid toe</a>
                                 <table>
                                     <tr>
                                         <th>Voornaam</th>
