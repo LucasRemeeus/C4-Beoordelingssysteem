@@ -33,7 +33,16 @@ require_once 'config.php';
         echo "<td>" . $row['Achternaam']. "</td>";
         echo "<td>" . $row['Klas']. "</td>";
         echo "<td><a href='Leerling_wijzig.php?id=".$row['ID_Leerling']."'>Bewerk</a></td>";
-        echo "<td><a href='Leerling_verwijder.php?id=".$row['ID_Leerling']."'>Delete</a></td>";
+        ?><script>
+            function Confirm() {
+                var r = confirm("Weet je zeker dat je het wilt verwijderen?");
+                if (r == true) {
+                    window.location.replace("Leerling_verwijder.php?id=<?php echo $row['ID_Leerling'];?>");
+                }
+            }
+        </script>
+        <?php
+        echo "<td><button onclick='Confirm()'>Delete</button></td>";
         echo "</tr>";
     }
     ?>
