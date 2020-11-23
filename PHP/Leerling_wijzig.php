@@ -66,25 +66,30 @@ while ($row = $result->fetch_assoc()) {
 
     <div class="toevoegen">
 
-        <form action="Leerling_wijzig_verwerk.php" method="post">
+        <form action="Leerling_wijzig_verwerk.php" method="post" class="toevoeg-form">
+            <h1>Leerling Wijzigen</h1>
             <input type="number" name="id" id="id" value="<?php echo $row['ID_Leerling']?>" required hidden readonly>
-            <p>
-                <label for="first_name" >Voornaam:</label>
-                <input type="text" name="Voornaam" id="Voornaam" value="<?php echo $row['Voornaam']?>" required>
-            </p>
-            <p>
-                <label for="last_name" >Achternaam:</label>
-                <input type="text" name="Achternaam" id="Achternaam" value="<?php echo $row['Achternaam']?>" required>
-            </p>
-            <p>
-                <input type="submit" name="submit" id="submit" value="Opslaan">
-                <button onclick="history.back();return false;">Annuleer</button>
-            </p>
+
+            <div class="textb">
+                <input type="text" name="Voornaam" id="voornaam" value="<?php echo $row['Voornaam']?>" required>
+                <div class="placeholder">Voornaam</div>
+            </div>
+
+            <div class="textb">
+                <input type="text" name="Achternaam" id="achternaam" value="<?php echo $row['Achternaam']?>" required>
+                <div class="placeholder">Achternaam</div>
+            </div>
+
+            <button class="loguit" id="submit" type="submit" name="submit" value="Verzenden">Verzenden</button>
+
         </form>
-        
+
     </div>
 <?php
 }
 ?>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
 </html>

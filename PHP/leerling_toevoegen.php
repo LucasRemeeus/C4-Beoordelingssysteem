@@ -59,17 +59,17 @@ require 'config.php';?>
     <form action="leerling_toevoegen_verwerk.php" method="post" class="toevoeg-form">
         <h1>Leerling Toevoegen</h1>
         <div class="textb">
-            <input name="voornaam" id="voornaam" required>
+            <input name="Voornaam" id="voornaam" required>
             <div class="placeholder">Voornaam</div>
         </div>
 
         <div class="textb">
-            <input name="achternaam" id="achternaam" required>
+            <input name="Achternaam" id="achternaam" required>
             <div class="placeholder">Achternaam</div>
         </div>
 
         <div class="textb">
-            <label class="klas">Klas:</label> 
+            <label class="Klas">Klas:</label> 
             <select class="form-control">
 
                 <?php
