@@ -41,7 +41,7 @@ if ($_SESSION['loggedin'] ===! true)
             </ul>
         </div>
         <div class="mx-auto order-0">
-            <a class="navbar-brand text-center text-dark mr-5 knop" href="home.php">Home</a>
+            <a class="navbar-brand text-center text-dark knop" href="home.php">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>
