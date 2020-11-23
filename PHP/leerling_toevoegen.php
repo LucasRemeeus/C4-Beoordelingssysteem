@@ -32,7 +32,7 @@ require 'config.php';?>
             </ul>
         </div>
         <div class="mx-auto order-0">
-            <a class="navbar-brand text-center text-dark mr-5 knop" href="home.php">Home</a>
+            <a class="navbar-brand text-center text-dark knop" href="home.php">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -59,12 +59,12 @@ require 'config.php';?>
     <form action="leerling_toevoegen_verwerk.php" method="post" class="toevoeg-form">
         <h1>Leerling Toevoegen</h1>
         <div class="textb">
-            <input name="voornaam" id="voornaam" required>
+            <input name="Voornaam" id="voornaam" required>
             <div class="placeholder">Voornaam</div>
         </div>
 
         <div class="textb">
-            <input name="achternaam" id="achternaam" required>
+            <input name="Achternaam" id="achternaam" required>
             <div class="placeholder">Achternaam</div>
         </div>
 
