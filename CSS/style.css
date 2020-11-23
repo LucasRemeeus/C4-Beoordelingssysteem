@@ -19,10 +19,17 @@ time, mark, audio, video {
     vertical-align: baseline;
 } */
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
 body {
     background-color: #6ED3FF;
     min-width: 1080px;
-    font-family: 'Montserrat', sans-serif;
 }
 
 /* Nav bar */
