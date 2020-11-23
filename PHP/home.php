@@ -33,7 +33,10 @@ if ($_SESSION['loggedin'] ===! true)
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
     </script>
 
+    
+
     <link rel="stylesheet" href="../CSS/style.css">
+    
 </head>
 
 <body>
@@ -81,14 +84,14 @@ while ($row = $result->fetch_assoc()){ ?>
                         <div class="card-body">
                             <h4 class="card-title"> <?php echo $row['Voornaam'] ." ". $row['Achternaam'] ?> </h4>
                             <div class="totaal">
-                                <div class="good">
-                                    <img class="duim" src="../IMG/duim-omhoog.png" alt="Duim omhoog">
+                                <div class="good" onclick="Goed()">
+                                    <img class="duim" src="../IMG/duim-omhoog.png" onclick="GoedPunt()" alt="Duim omhoog">
                                 </div>
                                 <div class="float-right text-center rounded-circle punten">
                                     <p class="punt">0</p>
                                 </div>
-                                <div class="bad mt-5">
-                                    <img class="duim" src="../IMG/duim-omlaag.png" alt="Duim omhoog">
+                                <div class="bad mt-5" onclick="Slecht()">
+                                    <img class="duim" src="../IMG/duim-omlaag.png" onclick="SlechtPunt()" alt="Duim omhoog">
                                 </div>
                             </div>
                         </div>
@@ -101,6 +104,11 @@ while ($row = $result->fetch_assoc()){ ?>
 <!--            -->
         </div>
     </div>
+
+    <div id="resultaat"></div>
+
+    <script src="../JS/iets.js"></script>
+    <script src="../JS/punt.js"></script>
 </body>
 
 </html>
