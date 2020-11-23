@@ -84,10 +84,6 @@ require 'config.php';?>
             </select>
             
         </div>
-
-        
-
-
         <br>
 
         
