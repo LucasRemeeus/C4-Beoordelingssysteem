@@ -69,11 +69,11 @@ require_once 'config.php';
                             <table class="text-center detailtable">
                                 <table>
                                     <tr>
-                                        <th>Voornaam</th>
-                                        <th>Achternaam</th>
-                                        <th>Klas</th>
-                                        <th>Bewerken</th>
-                                        <th>Verwijderen</th>
+                                        <th>Voornaam:</th>
+                                        <th>Achternaam:</th>
+                                        <th>Klas:</th>
+                                        <th>Bewerken:</th>
+                                        <th>Verwijderen:</th>
                                     </tr>
 
                                     <?php
