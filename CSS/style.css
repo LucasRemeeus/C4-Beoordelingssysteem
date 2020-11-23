@@ -22,6 +22,7 @@ time, mark, audio, video {
 body {
     background-color: #6ED3FF;
     min-width: 1080px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Nav bar */
