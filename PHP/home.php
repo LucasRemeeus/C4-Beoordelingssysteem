@@ -88,7 +88,21 @@ while ($row = $result->fetch_assoc()){ ?>
                                     <img class="duim" src="../IMG/duim-omhoog.png" alt="Duim omhoog">
                                 </div>
                                 <div class="float-right text-center rounded-circle punten">
-                                    <p class="punt">0</p>
+                                <?php
+                                    $puntensql = $mysqli -> prepare("SELECT * FROM `punten` WHERE ID_Leerling = ?");
+                                    $puntensql -> bind_param('i', $row['ID_Leerling']);
+                                    $puntensql -> execute();
+                                    $presult = $puntensql->get_result();
+
+                                    while ($prow = $presult->fetch_assoc()){
+                                    if ($prow['Punt'] == 1){
+                                        $punten++;
+                                    }else if($prow['Punt'] == 0){
+                                        $punten--;
+                                    }
+                                    }
+                                    ?>
+                                    <p class="punt"><?php echo $punten; ?></p>
                                 </div>
                                 <div class="bad mt-5" onclick="SlechtPunt(leerling_ID = <?php echo $row['ID_Leerling']; ?>)">
                                     <img class="duim" src="../IMG/duim-omlaag.png" alt="Duim omhoog">
