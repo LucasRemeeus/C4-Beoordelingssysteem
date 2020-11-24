@@ -24,17 +24,23 @@ function InitAJAX() {
 var punten = 0;
 
 
-function GoedPunt() {
+function GoedPunt(leerling_ID) {
+
+    var Reden = prompt("Vul een rede of opmerking in");
+
+    if (Reden != null) {
+
+
 
     // Maak een XHR object
     let xmlHttp = InitAJAX();
 
     // Lees de inhoud van het formulierveld
 
-    let punt = punten + 1;
+    let punt = 1;
 
     // Maak de URL voor het AJAX request
-    let url = '../PHP/punten_toevoeg.php?lp=' + punt;
+    let url = '../PHP/punten_toevoeg.php?punt='+punt+'&opmerking='+Reden+'&ID_Leerling='+leerling_ID;
 
     // Wat moet er gebeuren bij statuswijzigingen?
     xmlHttp.onreadystatechange = function() {
@@ -51,35 +57,37 @@ function GoedPunt() {
     // Verstuur het request
     xmlHttp.open("GET", url, true);
     xmlHttp.send(null);
-
+    }
 }
 
-function SlechtPunt() {
+function SlechtPunt(leerling_ID) {
+    var Reden = prompt("Vul een rede of opmerking in");
 
-    // Maak een XHR object
-    let xmlHttp = InitAJAX();
+    if (Reden != null) {
+        // Maak een XHR object
+        let xmlHttp = InitAJAX();
 
-    // Lees de inhoud van het formulierveld
+        // Lees de inhoud van het formulierveld
 
-    let punt = punten - 1;
+        let punt = 0;
 
-    // Maak de URL voor het AJAX request
-    let url = '../PHP/punten_toevoeg.php?lp=' + punt;
+        // Maak de URL voor het AJAX request
+        let url = '../PHP/punten_toevoeg.php?punt='+punt+'&opmerking='+Reden+'&ID_Leerling='+leerling_ID;
 
-    // Wat moet er gebeuren bij statuswijzigingen?
-    xmlHttp.onreadystatechange = function() {
-        // Is het request al helemaal klaar en OK ?
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-            // Lees de tekst die is ontvangen
-            let result = xmlHttp.responseText;
+        // Wat moet er gebeuren bij statuswijzigingen?
+        xmlHttp.onreadystatechange = function () {
+            // Is het request al helemaal klaar en OK ?
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                // Lees de tekst die is ontvangen
+                let result = xmlHttp.responseText;
 
-            // Plaats de tekst die is ontvangen
-            document.getElementById("resultaat").innerHTML = result;
+                // Plaats de tekst die is ontvangen
+                document.getElementById("resultaat").innerHTML = result;
+            }
         }
+
+        // Verstuur het request
+        xmlHttp.open("GET", url, true);
+        xmlHttp.send(null);
     }
-
-    // Verstuur het request
-    xmlHttp.open("GET", url, true);
-    xmlHttp.send(null);
-
 }

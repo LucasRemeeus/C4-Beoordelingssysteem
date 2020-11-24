@@ -84,14 +84,14 @@ while ($row = $result->fetch_assoc()){ ?>
                         <div class="card-body">
                             <h4 class="card-title"> <?php echo $row['Voornaam'] ." ". $row['Achternaam'] ?> </h4>
                             <div class="totaal">
-                                <div class="good" onclick="Goed()">
-                                    <img class="duim" src="../IMG/duim-omhoog.png" onclick="GoedPunt()" alt="Duim omhoog">
+                                <div class="good" onclick="GoedPunt(leerling_ID = <?php echo $row['ID_Leerling']; ?>)">
+                                    <img class="duim" src="../IMG/duim-omhoog.png" alt="Duim omhoog">
                                 </div>
                                 <div class="float-right text-center rounded-circle punten">
                                     <p class="punt">0</p>
                                 </div>
-                                <div class="bad mt-5" onclick="Slecht()">
-                                    <img class="duim" src="../IMG/duim-omlaag.png" onclick="SlechtPunt()" alt="Duim omhoog">
+                                <div class="bad mt-5" onclick="SlechtPunt(leerling_ID = <?php echo $row['ID_Leerling']; ?>)">
+                                    <img class="duim" src="../IMG/duim-omlaag.png" alt="Duim omhoog">
                                 </div>
                             </div>
                         </div>
