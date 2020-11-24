@@ -74,7 +74,7 @@ $mentorInfo->close();
                 <div class="card corner">
                     <div class="card-vertical">
                         <div class="img-square-wrapper">
-                            <img class="float-right profile mt-5 mr-5" src="../IMG/014-koala.svg" alt="Card image cap">
+                            <img class="float-right profile mt-5 mr-5" src="../IMG/14.svg" alt="Card image cap">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Voornaam: <p>Joeri</span></h5>
