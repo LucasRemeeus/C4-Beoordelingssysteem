@@ -13,6 +13,12 @@ $mentorInfo->execute();
 $mentorInfo->bind_result($mVoornaam, $mAchternaam, $mID);
 $mentorInfo->fetch();
 $mentorInfo->close();
+
+$ID = $_GET['id'];
+$statement = $mysqli -> prepare("SELECT * FROM `leerling` WHERE ID_Leerling = $ID");
+                                    $statement -> execute();
+                                    $result = $statement->get_result();
+                                    $row = $result->fetch_assoc()
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,17 +76,17 @@ $mentorInfo->close();
     <!-- Container -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2 mt-5 ml-5">
+            <div class="col-3 mt-5 ml-5">
                 <div class="card corner">
                     <div class="card-vertical">
                         <div class="img-square-wrapper">
                             <img class="float-right profile mt-5 mr-5" src="../IMG/14.svg" alt="Card image cap">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Voornaam: <p>Joeri</span></h5>
-                            <h5 class="card-title">Achternaam: Dekker</h5><br><br>
-                            <h5 class="card-title">Klas: 8a1</h5>
-                            <h5 class="card-title">Mentor: Bever Lucas Remeeus</h5>
+                            <h5 class="card-title">Voornaam: <?php echo $row['Voornaam'];?></h5>
+                            <h5 class="card-title">Achternaam: <?php echo $row['Achternaam'];?></h5><br><br>
+                            <h5 class="card-title">Klas: <?php echo $row['Klas'];?></h5>
+                            <h5 class="card-title">Mentor: <?php echo $mVoornaam." ".$mAchternaam;?></h5>
                             <hr>
                             <div class="Cirkel">
 
@@ -94,14 +100,14 @@ $mentorInfo->close();
                 <div class="card corner">
                     <div class="card-vertical">
                         <div class="card-body">
-                        <table class="text-center detailtable">
+                            <table class="text-center detailtable">
                                 <tr>
                                     <th>Datum:</th>
                                     <th>Punten:</th>
                                     <th>Opmerkingen:</th>
                                 </tr>
                                 <?php
-                                    $statement = $mysqli -> prepare("SELECT * FROM `Punten`");
+                                    $statement = $mysqli -> prepare("SELECT * FROM `Punten` WHERE ID_Leerling = $ID");
                                     $statement -> execute();
                                     $result = $statement->get_result();
                                     while ($row = $result->fetch_assoc()){
