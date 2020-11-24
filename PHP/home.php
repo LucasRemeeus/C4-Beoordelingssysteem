@@ -79,7 +79,7 @@ while ($row = $result->fetch_assoc()){ ?>
                 <div class="card corner">
                     <div class="card-vertical">
                         <div class="img-square-wrapper">
-                            <a href="detailpagina.php"><img class="float-right profile mt-5 mr-5" src="../IMG/1.svg" alt="Card image cap"></a>
+                            <a href="detailpagina.php?id=<?php echo $row['ID_Leerling']?>"><img class="float-right profile mt-5 mr-5" src="../IMG/1.svg" alt="Card image cap"></a>
                         </div>
                         <div class="card-body">
                             <h4 class="card-title"> <?php echo $row['Voornaam'] ." ". $row['Achternaam'] ?> </h4>
