@@ -128,10 +128,10 @@ while ($prow = $presult->fetch_assoc()){
                             <img class="float-right profile mt-5 mr-5" src="../IMG/14.svg" alt="Card image cap">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Voornaam: <?php echo $row['Voornaam'];?></h5>
-                            <h5 class="card-title">Achternaam: <?php echo $row['Achternaam'];?></h5><br><br>
-                            <h5 class="card-title">Klas: <?php echo $row['Klas'];?></h5>
-                            <h5 class="card-title">Mentor: <?php echo $mVoornaam." ".$mAchternaam;?></h5>
+                        <h5 class="card-title">Voornaam: <p class="font-weight-bold"><?php echo $row['Voornaam'];?></p></h5>
+                            <h5 class="card-title">Achternaam: <p class="font-weight-bold"><?php echo $row['Achternaam'];?></p></h5><br><br>
+                            <h5 class="card-title">Klas: <p class="font-weight-bold"><?php echo $row['Klas'];?></p></h5>
+                            <h5 class="card-title">Mentor: <p class="font-weight-bold"><?php echo $mVoornaam." ".$mAchternaam;?></p></h5>
                             <hr>
                             <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 
