@@ -46,7 +46,7 @@ if ($_SESSION['loggedin'] ===! true)
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link text-dark" href="#">Hallo, <?php echo $mVoornaam." ".$mAchternaam ?></a>
+                    <a class="nav-link text-dark font-weight-bold" href="#">Hallo, <?php echo $mVoornaam." ".$mAchternaam ?></a>
                 </li>
             </ul>
         </div>
@@ -74,38 +74,21 @@ if ($_SESSION['loggedin'] ===! true)
 $statement = $mysqli -> prepare("SELECT * FROM `leerling`");
 $statement -> execute();
 $result = $statement->get_result();
-while ($row = $result->fetch_assoc()){
-    $punten = 0;
-    ?>
-
+while ($row = $result->fetch_assoc()){ ?>
             <div class="col-2 mt-3">
                 <div class="card corner">
                     <div class="card-vertical">
                         <div class="img-square-wrapper">
-                            <a href="detailpagina.php?id=<?php echo $row['ID_Leerling']?>"><img class="float-right profile mt-5 mr-5" src="../IMG/1.svg" alt="Card image cap"></a>
+                            <a href="detailpagina.php?id=<?php echo $row['ID_Leerling']?>"><img class="float-right profile mt-5 mr-2" src="../IMG/1.svg" alt="Card image cap"></a>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title"> <?php echo $row['Voornaam'] ." ". $row['Achternaam'] ?> </h4>
+                            <h4 class="card-title font-weight-bold"> <?php echo $row['Voornaam'] ." ". $row['Achternaam'] ?> </h4>
                             <div class="totaal">
                                 <div class="good" onclick="GoedPunt(leerling_ID = <?php echo $row['ID_Leerling']; ?>)">
                                     <img class="duim" src="../IMG/duim-omhoog.png" alt="Duim omhoog">
                                 </div>
                                 <div class="float-right text-center rounded-circle punten">
-                                    <?php
-                                    $puntensql = $mysqli -> prepare("SELECT * FROM `punten` WHERE ID_Leerling = ?");
-                                    $puntensql -> bind_param('i', $row['ID_Leerling']);
-                                    $puntensql -> execute();
-                                    $presult = $puntensql->get_result();
-
-                                    while ($prow = $presult->fetch_assoc()){
-                                    if ($prow['Punt'] == 1){
-                                        $punten++;
-                                    }else if($prow['Punt'] == 0){
-                                        $punten--;
-                                    }
-                                    }
-                                    ?>
-                                    <p class="punt"><?php echo $punten; ?></p>
+                                    <p class="punt">0</p>
                                 </div>
                                 <div class="bad mt-5" onclick="SlechtPunt(leerling_ID = <?php echo $row['ID_Leerling']; ?>)">
                                     <img class="duim" src="../IMG/duim-omlaag.png" alt="Duim omhoog">
