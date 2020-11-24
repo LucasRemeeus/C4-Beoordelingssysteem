@@ -90,21 +90,35 @@ while ($row = $result->fetch_assoc()){
                                 <div class="good" onclick="GoedPunt(leerling_ID = <?php echo $row['ID_Leerling']; ?>)">
                                     <img class="duim" src="../IMG/duim-omhoog.png" alt="Duim omhoog">
                                 </div>
-                                <div class="float-right text-center rounded-circle punten">
-                                    <?php
-                                    $puntensql = $mysqli -> prepare("SELECT * FROM `punten` WHERE ID_Leerling = ? AND Datum = CURDATE()");
-                                    $puntensql -> bind_param('i', $row['ID_Leerling']);
-                                    $puntensql -> execute();
-                                    $presult = $puntensql->get_result();
+                                <?php
+                                $puntensql = $mysqli -> prepare("SELECT * FROM `punten` WHERE ID_Leerling = ? AND Datum = CURDATE()");
+                                $puntensql -> bind_param('i', $row['ID_Leerling']);
+                                $puntensql -> execute();
+                                $presult = $puntensql->get_result();
 
-                                    while ($prow = $presult->fetch_assoc()){
+                                while ($prow = $presult->fetch_assoc()){
                                     if ($prow['Punt'] == 1){
                                         $punten++;
                                     }else if($prow['Punt'] == 0){
                                         $punten--;
                                     }
-                                    }
-                                    ?>
+                                }
+                                switch ($punten) {
+                                    case 0:
+                                        $kleur = "green";
+                                        break;
+                                    case 1:
+                                        $kleur = "blue";
+                                        break;
+                                    case 2:
+                                        $kleur = "red";
+                                        break;
+                                    case 3:
+                                        $kleur = "green";
+                                        break;
+                                }
+                                ?>
+                                <div style="background-color: <?php echo $kleur; ?>;" class="float-right text-center rounded-circle punten">
                                     <p class="punt"><?php echo $punten; ?></p>
                                 </div>
                                 <div class="bad mt-5" onclick="SlechtPunt(leerling_ID = <?php echo $row['ID_Leerling']; ?>)">
