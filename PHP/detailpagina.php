@@ -19,7 +19,22 @@ $statement = $mysqli -> prepare("SELECT * FROM `leerling` WHERE ID_Leerling = ?"
 $statement -> bind_param('i', $ID);
 $statement -> execute();
 $result = $statement->get_result();
-$row = $result->fetch_assoc()
+$row = $result->fetch_assoc();
+
+$puntensql = $mysqli -> prepare("SELECT * FROM `punten` WHERE ID_Leerling = ? AND Datum = CURDATE()");
+$puntensql -> bind_param('i', $row['ID_Leerling']);
+$puntensql -> execute();
+$presult = $puntensql->get_result();
+$pluspunten = 0;
+$minpunten = 0;
+while ($prow = $presult->fetch_assoc()){
+    if ($prow['Punt'] == 1){
+        $pluspunten++;
+    }else if($prow['Punt'] == 0){
+        $minpunten++;
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
