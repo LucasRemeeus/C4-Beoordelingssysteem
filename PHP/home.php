@@ -122,8 +122,6 @@ while ($row = $result->fetch_assoc()){
         </div>
     </div>
 
-    <div id="resultaat"></div>
-
     <script src="../JS/iets.js"></script>
     <script src="../JS/punt.js"></script>
 </body>
