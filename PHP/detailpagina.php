@@ -15,10 +15,11 @@ $mentorInfo->fetch();
 $mentorInfo->close();
 
 $ID = $_GET['id'];
-$statement = $mysqli -> prepare("SELECT * FROM `leerling` WHERE ID_Leerling = $ID");
-                                    $statement -> execute();
-                                    $result = $statement->get_result();
-                                    $row = $result->fetch_assoc()
+$statement = $mysqli -> prepare("SELECT * FROM `leerling` WHERE ID_Leerling = ?");
+$statement -> bind_param('i', $ID);
+$statement -> execute();
+$result = $statement->get_result();
+$row = $result->fetch_assoc()
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -107,18 +108,19 @@ $statement = $mysqli -> prepare("SELECT * FROM `leerling` WHERE ID_Leerling = $I
                                     <th>Opmerkingen:</th>
                                 </tr>
                                 <?php
-                                    $statement = $mysqli -> prepare("SELECT * FROM `Punten` WHERE ID_Leerling = $ID");
-                                    $statement -> execute();
-                                    $result = $statement->get_result();
-                                    while ($row = $result->fetch_assoc()){
+                                    $statement2 = $mysqli -> prepare("SELECT * FROM `punten` WHERE ID_Leerling = ?");
+                                    $statement2 -> bind_param('i', $ID);
+                                    $statement2 -> execute();
+                                    $result2 = $statement2->get_result();
+                                    while ($row2 = $result2->fetch_assoc()){
                                         echo "<tr>";
-                                        echo "<td>" . $row['Datum']. "</td>";
-                                        if($row['Punt'] == 0){
+                                        echo "<td>" . $row2['Datum']. "</td>";
+                                        if($row2['Punt'] == 0){
                                             echo "<td> -1 </td>";
-                                        }else if($row['Punt'] == 1){
+                                        }else if($row2['Punt'] == 1){
                                             echo "<td> +1 </td>";
                                         }
-                                        echo "<td>" . $row['Opmerking']. "</td>";
+                                        echo "<td>" . $row2['Opmerking']. "</td>";
                                         echo "</tr>";
                                     }
                                     ?>
