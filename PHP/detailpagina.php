@@ -94,52 +94,24 @@ $mentorInfo->close();
                 <div class="card corner">
                     <div class="card-vertical">
                         <div class="card-body">
-                            <table class="text-center detailtable">
+                        <table class="text-center detailtable">
                                 <tr>
                                     <th>Datum:</th>
                                     <th>Punten:</th>
                                     <th>Opmerkingen:</th>
                                 </tr>
-                                <tr>
-                                    <td>11-11-2020</td>
-                                    <td>+1</td>
-                                    <td>Te pussy in Phasmophobia</td>
-                                </tr>
-                                <tr>
-                                    <td>11-11-2020</td>
-                                    <td>+1</td>
-                                    <td>Te pussy in Phasmophobia</td>
-                                </tr>
-                                <tr>
-                                    <td>11-11-2020</td>
-                                    <td>+1</td>
-                                    <td>Te pussy in Phasmophobia</td>
-                                </tr>
-                                <tr>
-                                    <td>11-11-2020</td>
-                                    <td>+1</td>
-                                    <td>Te pussy in Phasmophobia</td>
-                                </tr>
-                                <tr>
-                                    <td>11-11-2020</td>
-                                    <td>+1</td>
-                                    <td>Te pussy in Phasmophobia</td>
-                                </tr>
-                                <tr>
-                                    <td>11-11-2020</td>
-                                    <td>+1</td>
-                                    <td>Te pussy in Phasmophobia</td>
-                                </tr>
-                                <tr>
-                                    <td>11-11-2020</td>
-                                    <td>+1</td>
-                                    <td>Te pussy in Phasmophobia</td>
-                                </tr>
-                                <tr>
-                                    <td>11-11-2020</td>
-                                    <td>+1</td>
-                                    <td>Te pussy in Phasmophobia</td>
-                                </tr>
+                                <?php
+                                    $statement = $mysqli -> prepare("SELECT * FROM `Punten`");
+                                    $statement -> execute();
+                                    $result = $statement->get_result();
+                                    while ($row = $result->fetch_assoc()){
+                                        echo "<tr>";
+                                        echo "<td>" . $row['Datum']. "</td>";
+                                        echo "<td>" . $row['Punt']. "</td>";
+                                        echo "<td>" . $row['Opmerking']. "</td>";
+                                        echo "</tr>";
+                                    }
+                                    ?>
                             </table>
                         </div>
                     </div>
