@@ -1,5 +1,20 @@
-<?php session_start();
-require 'config.php';?>
+<?php
+session_start();
+require 'config.php';
+	
+if ($_SESSION['loggedin'] ===! true)
+{
+	header('location:../index.php');
+	die();
+}
+
+    $mentorInfo = $mysqli->prepare("SELECT Voornaam, Achternaam, ID_Docent FROM docenten WHERE Username=?");
+    $mentorInfo->bind_param("s", $_SESSION['username']);
+    $mentorInfo->execute();
+    $mentorInfo->bind_result($mVoornaam, $mAchternaam, $mID);
+    $mentorInfo->fetch();
+    $mentorInfo->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +42,7 @@ require 'config.php';?>
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link text-dark" href="#">Hallo, Meneer Remeeus</a>
+                    <a class="nav-link text-dark" href="#">Hallo, <?php echo $mVoornaam." ".$mAchternaam ?></a>
                 </li>
             </ul>
         </div>
