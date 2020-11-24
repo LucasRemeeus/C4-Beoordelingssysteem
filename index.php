@@ -40,7 +40,7 @@ if (isset($_POST['inlog']))
         </div>
 
         <div class="textb">
-            <a href="inlog.php">Klik hier om terug te gaan</a>
+            <a href="index.php">Klik hier om terug te gaan</a>
         </div>
        </div>
     <?php
