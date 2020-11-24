@@ -113,7 +113,11 @@ $statement = $mysqli -> prepare("SELECT * FROM `leerling` WHERE ID_Leerling = $I
                                     while ($row = $result->fetch_assoc()){
                                         echo "<tr>";
                                         echo "<td>" . $row['Datum']. "</td>";
-                                        echo "<td>" . $row['Punt']. "</td>";
+                                        if($row['Punt'] == 0){
+                                            echo "<td> -1 </td>";
+                                        }else if($row['Punt'] == 1){
+                                            echo "<td> +1 </td>";
+                                        }
                                         echo "<td>" . $row['Opmerking']. "</td>";
                                         echo "</tr>";
                                     }
