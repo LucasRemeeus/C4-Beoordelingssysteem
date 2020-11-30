@@ -47,8 +47,8 @@ nav {
 
 /* Container */
 .profile {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 }
 
 .corner {
@@ -56,23 +56,27 @@ nav {
 }
 
 .totaal {
-    width: 125px;
-    height: 125px;
+    width: 100px;
+    height: 100px;
+}
+
+.text {
+    font-size: 15px;
 }
 
 .punten {
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.13);
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
 }
 
 .punt {
-    margin-top: 13px;
+    margin-top: 7px;
 }
 
 .duim {
-    width: 43px;
-    height: 43px;
+    width: 32px;
+    height: 32px;
 }
 
 .score {
