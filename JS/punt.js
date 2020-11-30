@@ -46,11 +46,8 @@ function GoedPunt(leerling_ID) {
     xmlHttp.onreadystatechange = function() {
         // Is het request al helemaal klaar en OK ?
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-            // Lees de tekst die is ontvangen
-            let result = xmlHttp.responseText;
 
-            // Plaats de tekst die is ontvangen
-            document.getElementById("resultaat").innerHTML = result;
+            Leerlinguitlees();
         }
     }
 
@@ -79,10 +76,8 @@ function SlechtPunt(leerling_ID) {
             // Is het request al helemaal klaar en OK ?
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                 // Lees de tekst die is ontvangen
-                let result = xmlHttp.responseText;
-
                 // Plaats de tekst die is ontvangen
-                document.getElementById("resultaat").innerHTML = result;
+                Leerlinguitlees();
             }
         }
 
@@ -90,4 +85,34 @@ function SlechtPunt(leerling_ID) {
         xmlHttp.open("GET", url, true);
         xmlHttp.send(null);
     }
+}
+
+
+function Leerlinguitlees() {
+
+        // Maak een XHR object
+        let xmlHttp = InitAJAX();
+
+        // Lees de inhoud van het formulierveld
+
+
+        // Maak de URL voor het AJAX request
+        let url = '../PHP/leerling_uitlees.php';
+
+        // Wat moet er gebeuren bij statuswijzigingen?
+        xmlHttp.onreadystatechange = function () {
+            // Is het request al helemaal klaar en OK ?
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                // Lees de tekst die is ontvangen
+                let result = xmlHttp.responseText;
+                document.getElementById("resultaat").innerHTML = result;
+                // Plaats de tekst die is ontvangen
+
+            }
+        }
+
+        // Verstuur het request
+        xmlHttp.open("GET", url, true);
+        xmlHttp.send(null);
+
 }
