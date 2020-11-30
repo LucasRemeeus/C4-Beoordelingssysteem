@@ -24,7 +24,7 @@ function InitAJAX() {
 var punten = 0;
 
 
-function GoedPunt(leerling_ID) {
+function GoedPunt(leerling_ID,Klas) {
 
     var Reden = prompt("Vul een rede of opmerking in");
 
@@ -47,7 +47,7 @@ function GoedPunt(leerling_ID) {
         // Is het request al helemaal klaar en OK ?
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
 
-            Leerlinguitlees();
+            Leerlinguitlees(Klas);
         }
     }
 
@@ -57,7 +57,7 @@ function GoedPunt(leerling_ID) {
     }
 }
 
-function SlechtPunt(leerling_ID) {
+function SlechtPunt(leerling_ID,Klas) {
     var Reden = prompt("Vul een rede of opmerking in");
 
     if (Reden != null) {
@@ -77,7 +77,7 @@ function SlechtPunt(leerling_ID) {
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                 // Lees de tekst die is ontvangen
                 // Plaats de tekst die is ontvangen
-                Leerlinguitlees();
+                Leerlinguitlees(Klas);
             }
         }
 

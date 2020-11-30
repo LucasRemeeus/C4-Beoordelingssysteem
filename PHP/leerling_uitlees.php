@@ -23,7 +23,7 @@ while ($row = $result->fetch_assoc()){
             <div class="card-body">
                 <h4 class="card-title font-weight-bold"> <?php echo $row['Voornaam'] ." ". $row['Achternaam'] ?> </h4>
                 <div class="totaal">
-                    <div class="good" onclick="GoedPunt(leerling_ID = <?php echo $row['ID_Leerling']; ?>)">
+                    <div class="good" onclick="GoedPunt(leerling_ID = <?php echo $row['ID_Leerling']; ?>, Klas = '<?php echo $mid; ?>')">
                         <img class="duim" src="../IMG/duim-omhoog.png" alt="Duim omhoog">
                     </div>
                     <?php
@@ -89,7 +89,7 @@ while ($row = $result->fetch_assoc()){
                         class="float-right text-center rounded-circle punten">
                         <p class="punt"><?php echo $punten; ?></p>
                     </div>
-                    <div class="bad mt-5" onclick="SlechtPunt(leerling_ID = <?php echo $row['ID_Leerling']; ?>)">
+                    <div class="bad mt-5" onclick="SlechtPunt(leerling_ID = <?php echo $row['ID_Leerling']; ?>, Klas = '<?php echo $mid; ?>' )">
                         <img class="duim" src="../IMG/duim-omlaag.png" alt="Duim omhoog">
                     </div>
                 </div>
