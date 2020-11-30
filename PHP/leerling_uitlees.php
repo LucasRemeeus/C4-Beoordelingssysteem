@@ -15,7 +15,7 @@ while ($row = $result->fetch_assoc()){
                     <a href="detailpagina.php?id=<?php echo $row['ID_Leerling']?>"><img class="float-right profile mt-5 mr-2" src="../IMG/1.svg" alt="Card image cap"></a>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title font-weight-bold"> <?php echo $row['Voornaam'] ." ". $row['Achternaam'] ?> </h4>
+                <h4 class="card-title font-weight-bold text"> <?php echo $row['Voornaam'] ." ". $row['Achternaam'] ?> </h4>
                     <div class="totaal">
                         <div class="good" onclick="GoedPunt(leerling_ID = <?php echo $row['ID_Leerling']; ?>)">
                             <img class="duim" src="../IMG/duim-omhoog.png" alt="Duim omhoog">
