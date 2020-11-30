@@ -1,9 +1,14 @@
 <?php
 
 require 'config.php';
-$statement = $mysqli -> prepare("SELECT * FROM `leerling`");
+
+$mid = $_GET['mid'];
+
+$statement = $mysqli -> prepare("SELECT * FROM `leerling` WHERE Klas = ?");
+$statement->bind_param("s", $mid);
 $statement -> execute();
 $result = $statement->get_result();
+
 while ($row = $result->fetch_assoc()){
     $punten = 0;
     ?>
@@ -13,7 +18,7 @@ while ($row = $result->fetch_assoc()){
         <div class="card-vertical">
             <div class="img-square-wrapper">
                 <a href="detailpagina.php?id=<?php echo $row['ID_Leerling']?>"><img
-                        class="float-right profile mt-5 mr-2" src="../IMG/1.svg" alt="Card image cap"></a>
+                        class="float-right profile mt-5 mr-2" src="../IMG/<?php echo $row['img']?>.svg" alt="Card image cap"></a>
             </div>
             <div class="card-body">
                 <h4 class="card-title font-weight-bold"> <?php echo $row['Voornaam'] ." ". $row['Achternaam'] ?> </h4>

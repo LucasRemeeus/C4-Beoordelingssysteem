@@ -14,11 +14,17 @@ if ($_SESSION['loggedin'] ===! true)
     $mentorInfo->bind_result($mVoornaam, $mAchternaam, $mID);
     $mentorInfo->fetch();
     $mentorInfo->close();
+
+$klasInfo = $mysqli->prepare("SELECT Klas FROM docentkopeling WHERE ID_Docent = ?");
+$klasInfo->bind_param("i", $mID);
+$klasInfo->execute();
+$klasInfo->bind_result($Klas);
+$klasInfo->fetch();
+$klasInfo->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <script src="../JS/punt.js"></script>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,21 +40,20 @@ if ($_SESSION['loggedin'] ===! true)
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
     </script>
 
-
+    
 
     <link rel="stylesheet" href="../CSS/style.css">
-
+    
 </head>
 
 <body>
 
-    <!-- Nav bar -->
+<!-- Nav bar -->
     <nav class="navbar navbar-expand-md shadow-lg bg-white">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link text-dark font-weight-bold" href="#">Hallo,
-                        <?php echo $mVoornaam." ".$mAchternaam ?></a>
+                    <a class="nav-link text-dark font-weight-bold" href="#">Hallo, <?php echo $mVoornaam." ".$mAchternaam ?></a>
                 </li>
             </ul>
         </div>
@@ -69,13 +74,17 @@ if ($_SESSION['loggedin'] ===! true)
 
     <!-- Container -->
     <div class="container-fluid">
-        <div id="resultaat" class="row"></div>
+        <div id="resultaat" class="row">
+
+
+        </div>
     </div>
+
     <script src="../JS/iets.js"></script>
     <script src="../JS/punt.js"></script>
-    <script>
-        Leerlinguitlees();
-    </script>
+<script>
+    Leerlinguitlees(Klas = "<?php echo $Klas; ?>");
+</script>
 </body>
 
 </html>

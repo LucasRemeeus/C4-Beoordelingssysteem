@@ -88,16 +88,16 @@ function SlechtPunt(leerling_ID) {
 }
 
 
-function Leerlinguitlees() {
+function Leerlinguitlees(Klas) {
 
         // Maak een XHR object
         let xmlHttp = InitAJAX();
-
+        var Klas = Klas;
         // Lees de inhoud van het formulierveld
 
 
         // Maak de URL voor het AJAX request
-        let url = '../PHP/leerling_uitlees.php';
+        let url = '../PHP/leerling_uitlees.php?mid='+Klas;
 
         // Wat moet er gebeuren bij statuswijzigingen?
         xmlHttp.onreadystatechange = function () {
@@ -107,7 +107,6 @@ function Leerlinguitlees() {
                 let result = xmlHttp.responseText;
                 document.getElementById("resultaat").innerHTML = result;
                 // Plaats de tekst die is ontvangen
-
             }
         }
 

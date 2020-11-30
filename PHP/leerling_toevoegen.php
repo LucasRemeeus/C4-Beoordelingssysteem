@@ -97,7 +97,17 @@ if ($_SESSION['loggedin'] ===! true)
                     <option value="<?php echo $row['Klas'];?>"><?php echo $row['Klas'];?></option>
                 <?php }?>
             </select>
-            
+        </div>
+                <div class="textb">
+                    <label class="Icon">Icon:</label>
+                    <select name="Icon" id="Icon" class="form-control">
+                        <option value="1">Kat</option>
+                        <option value="2">Paard</option>
+                        <option value="3">Aap</option>
+                        <option value="4">Slang</option>
+                        <option value="5">Toekan</option>
+                    </select>
+                </div>
         </div>
 
         
