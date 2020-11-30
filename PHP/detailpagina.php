@@ -35,6 +35,8 @@ while ($prow = $presult->fetch_assoc()){
     }
 }
 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,6 +55,33 @@ while ($prow = $presult->fetch_assoc()){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
     </script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer",
+            {
+                theme: "light2",
+                title:{
+                    text: ""
+                },		
+                data: [
+                {       
+                    type: "pie",
+                    showInLegend: true,
+                    toolTipContent: "{y} - #percent %",
+                    
+                    legendText: "{indexLabel}",
+                    dataPoints: [
+                        {  y: <?php echo $pluspunten; ?>, indexLabel: "Pluspunten" },
+                        {  y: <?php echo $minpunten; ?>, indexLabel: "Minpunten" }
+                    ]
+                }
+                ]
+            });
+            chart.render();
+        }
+    </script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
@@ -104,14 +133,14 @@ while ($prow = $presult->fetch_assoc()){
                             <h5 class="card-title">Klas: <p class="font-weight-bold"><?php echo $row['Klas'];?></p></h5>
                             <h5 class="card-title">Mentor: <p class="font-weight-bold"><?php echo $mVoornaam." ".$mAchternaam;?></p></h5>
                             <hr>
-                            <div class="Cirkel">
+                            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+           
             <div class="col-11 mt-5 ml-5">
                 <div class="card corner">
                     <div class="card-vertical">
@@ -147,7 +176,16 @@ while ($prow = $presult->fetch_assoc()){
 
 
         </div>
+
+        
+                                 
+
     </div>
 </body>
 
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+ 
+</script>
 </html>
