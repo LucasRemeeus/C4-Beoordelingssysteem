@@ -104,18 +104,49 @@ while ($row = $result->fetch_assoc()){
                                     }
                                 }
                                 switch ($punten) {
+                                    case -5:
+                                        $kleur = "#DC143C"; // Crimson
+                                      break;
+                                    case -4:
+                                        $kleur = "#CD5C5C"; // Lightred
+                                        break;
+                                    case -3:
+                                        $kleur = "#FFA500"; // Orange
+                                        break;
+                                    case -2:
+                                        $kleur = "#FFFF00"; // Yellow
+                                        break;
+                                    case -1:
+                                        $kleur = "#EEE8AA"; // Lightyellow
+                                        break;
                                     case 0:
-                                        $kleur = "green";
+                                        $kleur = "#FFFFFF"; // White
                                         break;
                                     case 1:
-                                        $kleur = "blue";
+                                        $kleur = "#FFFF00"; // Yellow
                                         break;
                                     case 2:
-                                        $kleur = "red";
+                                        $kleur = "#EEE8AA"; // Lightyellow
                                         break;
                                     case 3:
-                                        $kleur = "green";
+                                        $kleur = "#98FB98"; // lightgreen
                                         break;
+                                    case 4:
+                                        $kleur = "#00FF7F"; // Green
+                                        break;
+                                    case 5:
+                                        $kleur = "#7FFFD4"; // Aquamarine
+                                        break;
+                                }
+
+                                if($punten >= 5)
+                                {
+                                    $kleur = "#7FFFD4";
+                                }
+
+                                if($punten <= -5)
+                                {
+                                    $kleur = "#DC143C";
                                 }
                                 ?>
                                 <div style="background-color: <?php echo $kleur; ?>;" class="float-right text-center rounded-circle punten">
