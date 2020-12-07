@@ -12,6 +12,15 @@ $mentorInfo->execute();
 $mentorInfo->bind_result($mVoornaam, $mAchternaam, $mID);
 $mentorInfo->fetch();
 $mentorInfo->close();
+
+$klasInfo = $mysqli->prepare("SELECT Klas FROM docentkopeling WHERE ID_Docent = ?");
+$klasInfo->bind_param("i", $mID);
+$klasInfo->execute();
+$klasInfo->bind_result($Klas);
+$klasInfo->fetch();
+$klasInfo->close();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,7 +92,8 @@ $mentorInfo->close();
                                     </tr>
 
                                     <?php
-                                    $statement = $mysqli -> prepare("SELECT * FROM `Leerling`");
+                                    $statement = $mysqli -> prepare("SELECT * FROM `Leerling` WHERE Klas = ?");
+                                    $statement->bind_param("s", $Klas);
                                     $statement -> execute();
                                     $result = $statement->get_result();
                                     while ($row = $result->fetch_assoc()){
