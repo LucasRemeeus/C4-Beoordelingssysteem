@@ -152,7 +152,7 @@ while ($prow = $presult->fetch_assoc()){
                                     <th>Opmerkingen:</th>
                                 </tr>
                                 <?php
-                                    $statement2 = $mysqli -> prepare("SELECT * FROM `punten` WHERE ID_Leerling = ?");
+                                    $statement2 = $mysqli -> prepare("SELECT * FROM `punten` WHERE ID_Leerling = ? ORDER BY Datum DESC");
                                     $statement2 -> bind_param('i', $ID);
                                     $statement2 -> execute();
                                     $result2 = $statement2->get_result();
