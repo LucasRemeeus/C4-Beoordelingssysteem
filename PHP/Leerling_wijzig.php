@@ -1,11 +1,11 @@
 <?php
 session_start();
 require 'config.php';
-	
-if ($_SESSION['loggedin'] ===! true)
+
+if ($_SESSION['loggedin'] ==! true || !isset($_SESSION['loggedin']))
 {
-	header('location:../index.php');
-	die();
+    header('location:../index.php');
+    die();
 }
 
     $mentorInfo = $mysqli->prepare("SELECT Voornaam, Achternaam, ID_Docent FROM docenten WHERE Username=?");

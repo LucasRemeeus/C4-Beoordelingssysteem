@@ -2,6 +2,12 @@
 
 require 'config.php';
 
+if ($_SESSION['loggedin'] ==! true || !isset($_SESSION['loggedin']))
+{
+    header('location:../index.php');
+    die();
+}
+
 $IDLeerling = $_GET['ID_Leerling'];
 $IDDocent = '1';
 $Punt = $_GET['punt'];
