@@ -2,11 +2,6 @@
 
 require 'config.php';
 
-if ($_SESSION['loggedin'] ==! true || !isset($_SESSION['loggedin']))
-{
-    header('location:../index.php');
-    die();
-}
 
 $mid = $_GET['mid'];
 
