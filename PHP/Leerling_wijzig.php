@@ -89,6 +89,34 @@ while ($row = $result->fetch_assoc()) {
                 <div class="placeholder">Achternaam</div>
             </div>
 
+            <div class="textb">
+                <label class="Klas">Klas:</label>
+                <select name="Klas" id="Klas" class="form-control">
+                    <option selected value="<?php echo $row['Klas']?>"><?php echo $row['Klas'];?> - Nu in deze klas</option>
+                    <?php
+                    $statement2 = $mysqli -> prepare("SELECT DISTINCT Klas FROM `docentkopeling`");
+                    $statement2 -> execute();
+                    $result2 = $statement2->get_result();
+                    while ($row2 = $result2->fetch_assoc()){
+                            if($row['Klas'] !== $row2['Klas']){
+                        ?>
+                        <option value="<?php echo $row2['Klas'];?>"><?php echo $row2['Klas'];?></option>
+                    <?php
+                    }}
+                    ?>
+                </select>
+            </div>
+            <div class="textb">
+                <label class="Icon">Icon:</label>
+
+                <select name="Icon" id="Icon" class="form-control">
+                    <option <?php if($row['img'] == 1){ echo "selected"; }?> value="1">Kat</option>
+                    <option <?php if($row['img'] == 2){ echo "selected"; }?> value="2">Paard</option>
+                    <option <?php if($row['img'] == 3){ echo "selected"; }?> value="3">Aap</option>
+                    <option <?php if($row['img'] == 4){ echo "selected"; }?> value="4">Slang</option>
+                    <option <?php if($row['img'] == 5){ echo "selected"; }?> value="5">Toekan</option>
+                </select>
+            </div>
             <button class="loguit" id="submit" type="submit" name="submit" value="Verzenden">Verzenden</button>
 
         </form>
