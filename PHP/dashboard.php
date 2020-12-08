@@ -103,16 +103,16 @@ $klasInfo->close();
                                         echo "<td>" . $row['Klas']. "</td>";
                                         echo "<td><a href='Leerling_wijzig.php?id=".$row['ID_Leerling']."'>Bewerk</a></td>";
                                         ?><script>
-                                        function Confirm() {
+                                        function Confirm(ID_Leerling) {
                                             var r = confirm("Weet je zeker dat je het wilt verwijderen?");
                                             if (r == true) {
                                                 window.location.replace(
-                                                    "Leerling_verwijder.php?id=<?php echo $row['ID_Leerling'];?>");
+                                                    "Leerling_verwijder.php?id="+ID_Leerling);
                                             }
                                         }
                                     </script>
                                     <?php
-                                        echo "<td><button onclick='Confirm()'>Verwijderen</button></td>";
+                                        echo "<td><button onclick='Confirm(ID_Leerling =". $row['ID_Leerling'] .")'>Verwijderen</button></td>";
                                         echo "</tr>";
                                     }
                                     ?>
