@@ -2,6 +2,7 @@
 
 require 'config.php';
 
+
 $mid = $_GET['mid'];
 
 $statement = $mysqli -> prepare("SELECT * FROM `leerling` WHERE Klas = ?");

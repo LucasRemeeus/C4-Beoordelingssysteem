@@ -1,4 +1,11 @@
 <?php
+
+if ($_SESSION['loggedin'] ==! true || !isset($_SESSION['loggedin']))
+{
+    header('location:../index.php');
+    die();
+}
+
 $voornaam = $_POST['Voornaam'];
 $achternaam = $_POST['Achternaam'];
 $klas = $_POST['Klas'];
